@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 20:33:58
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-05 11:01:53
+* @Last Modified time: 2018-09-14 00:35:40
 */
  // 图书轮播
     // let imgss=document.querySelectorAll(".hui .content .list ul li .pics .pic");
@@ -14,9 +14,9 @@
     // imgs[0].style.left=0;
     // 
  function lb(imgss,dotss,leftbtns,rightbtns){
- 	let widthss=imgss.width();
- 	dotss[0].addClass("active");
-    imgss[0].css("left","0");
+  let widthss=parseInt(getComputedStyle(imgss[0],null).width);
+  dotss[0].classList.add("active");
+    imgss[0].style.left="0";
     let nows=0;
     let nexts=0;
     let flag=true;
@@ -25,11 +25,11 @@
         if (nexts==imgss.length){
             nexts=0;
         }
-        imgss[nexts].css("left","widthss+'px'");
-         imgss[nows].animate({left:"-widthss"});
-         imgss[nexts].animate({left:"0"});
-        dotss[nows].removeChild("active");
-        dotss[nexts].addClass("active");
+        imgss[nexts].style.left=widthss+"px";
+        animate(imgss[nows],{left:-widthss});
+        animate(imgss[nexts],{left:0});
+        dotss[nows].classList.remove("active");
+        dotss[nexts].classList.add("active");
         nows=nexts;
     }
     function movesL() {
@@ -37,33 +37,39 @@
         if (nexts<0){
             nexts=imgss.length-1;
         }
-        imgss[nexts].css("left","-widthss+'px'");
-        imgss[nows].animate({left:"widthss"});
-        imgss[nexts].animate({left:"0"});
-        dotss[nows].removeChild("active");
-        dotss[nexts].addClass("active");
+        imgss[nexts].style.left=-widthss+"px";
+        animate(imgss[nows],{left:widthss});
+        animate(imgss[nexts],{left:0});
+        dotss[nows].classList.remove("active");
+        dotss[nexts].classList.add("active");
         nows=nexts;
+        console.log(next);
     }
-    leftbtns.click(function () {
+    leftbtns.onclick=function () {
            if (nows==0) {
             return;
         }
         movesL();
      
-     })
-    rightbtns.click(function () {
+     }
+    rightbtns.onclick=function () {
           if (nows==dotss.length-1) {
             return;
         }
         moves();
       
-    })
-     dotss.mouseenter(function () {
-         let i=$(this).index();
-         dotss.removeChild("active").eq(i).addClass("active");
-         imgss.css("left","widthss+'px'").eq(i).css("left","0");
-     })
-
+    }
+    for (let i=0;i<dotss.length;i++){
+      dotss[i].onmouseenter=function(){
+          for (var j = 0; j < dotss.length; j++) {
+            dotss[j].classList.remove("active");
+            imgss[j].style.left=widthss+"px";
+          }
+          dotss[i].classList.add("active");
+          imgss[i].style.left=0;
+        }
+      }
  }
+
 
     

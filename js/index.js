@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-13 19:14:46
+* @Last Modified time: 2018-09-14 00:36:59
 */
 window.onload=function () {
 
@@ -136,32 +136,32 @@ window.onload=function () {
     lis2.mouseleave(function(){
         son2.css("opacity","0");
     })
-// 图书轮播
-    let imgss=$(".hui .content .list ul li:nth-child(1) .pics .pic");
-    let dotss=$(".hui .content .list ul li:nth-child(1) .dots .dot");
-    let leftbtns=$(".hui .content .list ul li:nth-child(1) .zuo")[0];
-    let rightbtns=$(".hui .content .list ul li:nth-child(1) .you")[0];
+// // 图书轮播
+    let imgss=document.querySelectorAll(".hui .content .list ul li:nth-child(1) .pics .pic");
+    let dotss=document.querySelectorAll(".hui .content .list ul li:nth-child(1) .dots .dot");
+    let leftbtns=document.querySelectorAll(".hui .content .list ul li:nth-child(1) .zuo")[0];
+    let rightbtns=document.querySelectorAll(".hui .content .list ul li:nth-child(1) .you")[0];
     lb(imgss,dotss,leftbtns,rightbtns);
 
 
-    let img2=$(".hui .content .list ul li:nth-child(2) .pics .pic");
-    let dot2=$(".hui .content .list ul li:nth-child(2) .dots .dot");
-    let leftbtn2=$(".hui .content .list ul li:nth-child(2) .zuo")[0];
-    let rightbtn2=$(".hui .content .list ul li:nth-child(2) .you")[0];
+    let img2=document.querySelectorAll(".hui .content .list ul li:nth-child(2) .pics .pic");
+    let dot2=document.querySelectorAll(".hui .content .list ul li:nth-child(2) .dots .dot");
+    let leftbtn2=document.querySelectorAll(".hui .content .list ul li:nth-child(2) .zuo")[0];
+    let rightbtn2=document.querySelectorAll(".hui .content .list ul li:nth-child(2) .you")[0];
     lb(img2,dot2,leftbtn2,rightbtn2);
 
 
-    let img3=$(".hui .content .list ul li:nth-child(3) .pics .pic");
-    let dot3=$(".hui .content .list ul li:nth-child(3) .dots .dot");
-    let leftbtn3=$(".hui .content .list ul li:nth-child(3) .zuo")[0];
-    let rightbtn3=$(".hui .content .list ul li:nth-child(3) .you")[0];
+    let img3=document.querySelectorAll(".hui .content .list ul li:nth-child(3) .pics .pic");
+    let dot3=document.querySelectorAll(".hui .content .list ul li:nth-child(3) .dots .dot");
+    let leftbtn3=document.querySelectorAll(".hui .content .list ul li:nth-child(3) .zuo")[0];
+    let rightbtn3=document.querySelectorAll(".hui .content .list ul li:nth-child(3) .you")[0];
     lb(img3,dot3,leftbtn3,rightbtn3);
 
 
-    let img4=$(".hui .content .list ul li:nth-child(4) .pics .pic");
-    let dot4=$(".hui .content .list ul li:nth-child(4) .dots .dot");
-    let leftbtn4=$(".hui .content .list ul li:nth-child(4) .zuo")[0];
-    let rightbtn4=$(".hui .content .list ul li:nth-child(4) .you")[0];
+    let img4=document.querySelectorAll(".hui .content .list ul li:nth-child(4) .pics .pic");
+    let dot4=document.querySelectorAll(".hui .content .list ul li:nth-child(4) .dots .dot");
+    let leftbtn4=document.querySelectorAll(".hui .content .list ul li:nth-child(4) .zuo")[0];
+    let rightbtn4=document.querySelectorAll(".hui .content .list ul li:nth-child(4) .you")[0];
     lb(img4,dot4,leftbtn4,rightbtn4);
 
 // 返回顶部
