@@ -2,7 +2,7 @@
 * @Author: 我的文档
 * @Date:   2018-09-03 17:37:13
 * @Last Modified by:   我的文档
-* @Last Modified time: 2018-09-14 00:36:59
+* @Last Modified time: 2018-09-15 14:56:23
 */
 window.onload=function () {
 
@@ -171,7 +171,26 @@ window.onload=function () {
         animate(document.documentElement,{scrollTop:0},600);
     }
 
-
+// 倒计时
+    let h=$(".h");
+    let f=$(".f");
+    let s=$(".s");
+    // console.log(h,f,s);
+    setDate();
+    setInterval(setDate,1000);
+    function setDate() {
+        let now=new Date();
+        let future=new Date(2018,9,17,18);
+        let time=Math.floor((future.getTime()-now.getTime())/1000);
+        let hour=Math.floor(time%(30*24*60*60)%(24*60*60)/(60*60));
+        let fz=Math.floor(time%(30*24*60*60)%(24*60*60)%(60*60)/60);
+        let m=Math.floor(time%(30*24*60*60)%(24*60*60)%(60*60)%60);
+        console.log(hour,fz,m);
+         h.html(hour);
+         f.html(fz);
+         s.html(m);
+     
+    }
 
 
 }
